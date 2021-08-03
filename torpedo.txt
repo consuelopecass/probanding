@@ -1,0 +1,112 @@
+git init para iniciar
+se pone verde indicando que esos archivos no tienen seguimiento
+
+git status -s
+nos muestra en que estado se encuentran los archivos 
+
+git add index.html
+hará add sólo del archivo index 
+la A que parece significa que se adhiere al repositorio (viene de Add)
+
+git commit -m "primer commit"
+acá el archivo index se archiva en git local
+el archivo index.html pierde la a
+
+-- AHORA HACEMOS OTRO git status -s PARA MOSTRAR QUE INDEX YA NO ESTÁ --
+
+git add . para guardar todos los demás archivos en git
+se van todos los colores poruqe ya no hay cambios pendientes
+
+Agregar h1 en HTML y luego hacer un nuevo git add . para que se guarde
+
+git log --oneline
+con esto vemos todos los commit que hemos realizado
+
+git reset --hard f78sd7yf (codigo del commit) 
+se borrará el commit del h1
+
+git reset --hard a62f7d6 (codigo del commit)
+se agregará nuevamente el commit del h1
+
+- - - - LUEGO DE ESTO PODEMOS IRNOS A GITHUB Y SUBIR A LA NUBE NUESTRA WEB
+
+git y gitHub son empresas distintas, no confundir
+
+.crear nuevo repo y enlazar con mi proyecto 
+.mostrar los commits
+.indicar que hemos aprendido a trabajar con git de forma local y también enlazarlo a la nube
+
+AHORA VUELO A VSC Y AGREGO UN CONSOLE.LOG('UPS, OLVIDE AGREGAR ESTE MENSAJE')
+le doy git add . y luego git status para reforzar que se guarde. 
+Luego agrego el commit -m "modificando el script.js"
+git push para subir 
+
+AHORA VAMOS A CREAR UN README DESDE GITHUB 
+apreto readme.md modifico el texto que aparece y luego me voy abajo 
+para crear el nuevo commit asociado a este cambio 
+Esto es para mostrar que podemos crear cosas en nuestro github y luego 
+sincronizarlo a nuestro repo local
+- ahora hago git pull en VSC para que se actualicen los cambios que se agregaron en github
+
+TAGS
+
+en VSC pongo 
+git tag version1.0 -m "version 1.0"
+
+git log --oneline 
+nos muestra los commits
+
+git push --tags
+subirá el tag con la nueva versión que creamos
+en github revisamos en la sección releases 
+
+RAMAS O BRANCH
+acá mostrar las imagenes de las ramas e indicar que son ramas que luego 
+podemos juntar (a esto se le llama merge)
+.voy al VSC y agrego un parrafo con lorem
+.en consola pongo git branch nombreRama "ramaPrueba"
+(acá se creo la rama pero no nos hemos movido a ella, ojo con eso)
+.git checkout ramaPrueba para movernos a la nueva rama
+.ahora hacemos un git branch para que nos muestre en que rama estamos
+.ahora hacemos git add . para guardar este cambio 
+.git commit -m "agregando un parrafo"
+.git log --oneline y nos mostrará que estamos en la ramaPrueba
+
+AHORA UNIREMOS AMBAS RAMAS Y PARA ELLO DEBEMOS VOLVER A LA RAMA MASTER
+.git checkout master
+.git branch para ver nuevamente en que rama estamos parados
+.git merge ramaPrueba y se unen ambas ramas
+
+AHORA ELIMINAREMOS LA RAMA QUE NO ESTAMOS OCUPANDO
+.git log --oneline para ver que ya no necesitamos la ramaPrueba
+.git branch -d ramaPrueba
+.git log --oneline para ver que ya no está la ramaPrueba
+
+AHORA CREAREMOS UN CONFLICTO DE VERSIONES PARA VER COMO SOLUCIONARLO CON GIT
+.git branch ramaConflictiva
+.git checkout ramaConflictiva
+.git branch para ver que ya nos cambiamos a la nueva rama
+.Ahora voy al parrafo y modifico una linea, borrando algunas palabras al comienzo y poniendo 12345
+.git add . y git commit -m "agregando numeros al comienzo del parrafo"
+.git checkout master para volver a la rama principal
+.git branch para verificar que volvimos a la rama master
+.Ahora voy al parrafo y modifico la ultima linea, borrando algunas palabras y poniendo 12345
+.git add . y git commit -m "agregando numeros al final del parrafo"
+.git branch para verificar que seguimos en la rama master
+.git merge ramaConflictiva y se levantará el problema
+
+ACA SE SOLUCIONA EL CONFLICTO DECIDIENDO QUE CAMBIO QUEREMOS DEJAR EN EL VSC (ENTRANTE)
+
+.git status -m nos muestra que index está modificado 
+.git add . agregamos los nuevos cambios
+.git commit -m "resolviendo conflicto de ramas"
+
+
+
+
+
+
+
+
+
+
