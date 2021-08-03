@@ -73,7 +73,7 @@ podemos juntar (a esto se le llama merge)
 .git log --oneline y nos mostrará que estamos en la ramaPrueba
 
 AHORA UNIREMOS AMBAS RAMAS Y PARA ELLO DEBEMOS VOLVER A LA RAMA MASTER
-.git checkout master
+.git checkout main
 .git branch para ver nuevamente en que rama estamos parados
 .git merge ramaPrueba y se unen ambas ramas
 
